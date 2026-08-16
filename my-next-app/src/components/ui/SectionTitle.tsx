@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import styles from "./SectionTitle.module.css";
 
 export default function SectionTitle({
   eyebrow,
@@ -11,24 +11,29 @@ export default function SectionTitle({
   align?: "left" | "center";
   dark?: boolean;
 }) {
+  const containerClasses = [
+    styles.container,
+    align === "center" ? styles.center : "",
+  ].filter(Boolean).join(" ");
+
+  const eyebrowClasses = [
+    styles.eyebrow,
+    dark ? styles.eyebrowDark : styles.eyebrowLight,
+    align === "center" ? styles.eyebrowCenter : "",
+  ].filter(Boolean).join(" ");
+
+  const titleClasses = [
+    styles.title,
+    dark ? styles.titleDark : styles.titleLight,
+  ].filter(Boolean).join(" ");
+
   return (
-    <div className={cn("mb-12", align === "center" && "text-center")}>
-      <div
-        className={cn(
-          "mb-3 flex items-center gap-3 font-mono text-xs tracking-[0.25em] uppercase",
-          dark ? "text-brass-light" : "text-brass",
-          align === "center" && "justify-center"
-        )}
-      >
-        <span className="h-px w-8 bg-current" />
+    <div className={containerClasses}>
+      <div className={eyebrowClasses}>
+        <span className={styles.line} />
         {eyebrow}
       </div>
-      <h2
-        className={cn(
-          "font-display text-4xl md:text-5xl leading-[1.05] tracking-tight",
-          dark ? "text-parchment" : "text-ink"
-        )}
-      >
+      <h2 className={titleClasses}>
         {title}
       </h2>
     </div>

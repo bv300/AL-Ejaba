@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import styles from "./Container.module.css";
 
 export default function Container({
   children,
@@ -7,8 +7,9 @@ export default function Container({
   children: React.ReactNode;
   className?: string;
 }) {
+  const classes = [styles.container, className].filter(Boolean).join(" ");
   return (
-    <div className={cn("mx-auto w-full max-w-6xl px-6 md:px-10", className)}>
+    <div className={classes}>
       {children}
     </div>
   );

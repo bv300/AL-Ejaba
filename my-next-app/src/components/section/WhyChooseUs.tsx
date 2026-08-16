@@ -1,83 +1,46 @@
 import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
-import { formatAED } from "@/lib/utils";
-import { projects } from "@/data/site";
+import Reveal from "@/components/ui/Reveal";
+import styles from "./WhyChooseUs.module.css";
 
 const reasons = [
-  {
-    code: "A",
-    title: "One team, start to finish",
-    body: "Design, fit-out and landscaping run under a single team — no handover gaps between contractors.",
-  },
-  {
-    code: "B",
-    title: "Maintenance doesn't stop at handover",
-    body: "A dedicated maintenance team stays on for plumbing, electrical and mechanical support after the project ends.",
-  },
-  {
-    code: "C",
-    title: "Built for the budget you set",
-    body: "Innovative solutions and an ambiance clients love, kept inside an affordable, agreed budget.",
-  },
+  { title: "EXPERIENCE YOU CAN TRUST", body: "Our portfolio and experience across different project types allow us to understand a wide range of technical and interior requirements." },
+  { title: "CREATIVE APPROACH", body: "We combine creativity with technical consultation to transform ideas into practical and attractive spaces." },
+  { title: "SKILLED WORKFORCE", body: "Our skilled teams handle interior, technical, maintenance and facility-management requirements." },
+  { title: "CUSTOMER FOCUSED", body: "We value strong customer relationships and work around the specific needs of each client." },
+  { title: "COMPLETE SOLUTIONS", body: "From interior design and decoration to fit-out, maintenance, MEP and landscaping, we provide a broad range of services." },
+  { title: "MAINTENANCE SUPPORT", body: "Dedicated maintenance teams provide timely service support for completed projects." },
+  { title: "TECHNICAL EXPERTISE", body: "Our teams undertake plumbing, electrical, mechanical and other technical maintenance works." },
+  { title: "VALUE-FOCUSED", body: "We aim to provide innovative solutions and attractive environments while considering the client's budget." },
 ];
 
 export default function WhyChooseUs() {
   return (
-    <section id="why-us" className="bg-ink py-28">
+    <section id="why-choose-us" className={styles.section}>
       <Container>
-        <SectionTitle eyebrow="Why AAJLTES" title="Built on a track record." dark />
+        <div className={styles.header}>
+          <Reveal>
+            <SectionTitle eyebrow="WHY CHOOSE US" title="WHY CHOOSE AL EJABA?" dark />
+          </Reveal>
+          <Reveal delay={200}>
+            <p className={styles.headerDesc}>
+              We combine experience, creativity, and technical expertise to deliver outstanding results for every project.
+            </p>
+          </Reveal>
+        </div>
 
-        <div className="grid gap-16 lg:grid-cols-[0.9fr_1.1fr]">
-          <div className="space-y-8">
-            {reasons.map((reason) => (
-              <div key={reason.code} className="flex gap-5">
-                <span className="font-display text-2xl text-brass">
-                  {reason.code}
-                </span>
-                <div>
-                  <h3 className="font-display text-xl text-parchment">
-                    {reason.title}
-                  </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-parchment/60">
-                    {reason.body}
-                  </p>
+        <div className={styles.cardsGrid}>
+            {reasons.map((reason, i) => (
+              <Reveal key={i} delay={(i % 2) * 100} className={styles.cardReveal}>
+                <div className={styles.reasonCard}>
+                  <div className={styles.cardContent}>
+                    <h3 className={styles.reasonTitle}>{reason.title}</h3>
+                    <p className={styles.reasonBody}>{reason.body}</p>
+                  </div>
                 </div>
-              </div>
+              </Reveal>
             ))}
           </div>
-
-          {/* project ledger — the spec-sheet signature element */}
-          <div id="projects" className="border border-brass/25">
-            <div className="flex items-center justify-between border-b border-brass/25 bg-brass/5 px-6 py-4">
-              <span className="font-mono text-xs uppercase tracking-[0.25em] text-brass">
-                Project Ledger
-              </span>
-              <span className="font-mono text-[10px] uppercase tracking-[0.2em] text-parchment/40">
-                Selected works
-              </span>
-            </div>
-            <div className="max-h-[440px] overflow-y-auto">
-              {projects.map((project, i) => (
-                <div
-                  key={`${project.name}-${i}`}
-                  className="flex items-center justify-between gap-4 border-b border-parchment/10 px-6 py-4 last:border-0"
-                >
-                  <div className="min-w-0">
-                    <div className="truncate font-display text-base text-parchment">
-                      {project.name}
-                    </div>
-                    <div className="mt-1 font-mono text-[10px] uppercase tracking-[0.15em] text-parchment/40">
-                      {project.location} · {project.scope}
-                    </div>
-                  </div>
-                  <div className="shrink-0 font-mono text-sm text-brass-light">
-                    {formatAED(project.value)}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
       </Container>
     </section>
   );

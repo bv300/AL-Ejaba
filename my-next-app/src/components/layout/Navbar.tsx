@@ -2,8 +2,7 @@
 
 import { useEffect, useState } from "react";
 import { navLinks, site } from "@/data/site";
-import Button from "@/components/ui/Button";
-import Container from "@/components/ui/Container";
+import styles from "./Navbar.module.css";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -16,66 +15,62 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-colors duration-300 ${
-        scrolled ? "bg-ink/95 backdrop-blur border-b border-brass/20" : "bg-transparent"
-      }`}
-    >
-      <Container className="flex h-20 items-center justify-between">
-        <a href="#home" className="font-display text-xl tracking-tight text-parchment">
-          {site.shortName}
-          <span className="ml-2 font-mono text-[10px] tracking-[0.3em] text-brass">
-            L.L.C
-          </span>
-        </a>
+    <div className={styles.container}>
+      <header
+        className={`${styles.header} ${scrolled ? styles.headerScrolled : styles.headerTop}`}
+      >
+        <div className={styles.inner}>
+          <a href="#home" className={styles.logo}>
+            <img src="/images/alejaba_logo_200x200.png" alt="Al Ejaba Logo" className={styles.logoImg} />
+            <div className={styles.logoText}>
+              {site.name}
+              <span className={styles.llc}>
+                TECHNICAL SERVICES L.L.C.
+              </span>
+            </div>
+          </a>
 
-        <nav className="hidden items-center gap-8 md:flex">
-          {navLinks.map((link) => (
-            <a
-              key={link.href}
-              href={link.href}
-              className="font-mono text-xs uppercase tracking-[0.2em] text-parchment/70 transition-colors hover:text-brass"
-            >
-              {link.label}
-            </a>
-          ))}
-        </nav>
-
-        <div className="hidden md:block">
-          <Button href="#contact" variant="primary">
-            Get a Quote
-          </Button>
-        </div>
-
-        <button
-          aria-label="Toggle menu"
-          onClick={() => setOpen(!open)}
-          className="flex flex-col gap-1.5 md:hidden"
-        >
-          <span className="h-px w-6 bg-parchment" />
-          <span className="h-px w-6 bg-parchment" />
-        </button>
-      </Container>
-
-      {open && (
-        <div className="border-t border-brass/20 bg-ink md:hidden">
-          <Container className="flex flex-col gap-4 py-6">
+          <nav className={styles.nav}>
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                onClick={() => setOpen(false)}
-                className="font-mono text-xs uppercase tracking-[0.2em] text-parchment/80"
+                className={styles.link}
               >
                 {link.label}
               </a>
             ))}
-            <Button href="#contact" variant="primary" className="w-fit">
-              Get a Quote
-            </Button>
-          </Container>
+          </nav>
+
+
+          <button
+            aria-label="Toggle menu"
+            onClick={() => setOpen(!open)}
+            className={styles.menuBtn}
+          >
+            <span className={`${styles.bar} ${open ? styles.barOpenTop : ""}`} />
+            <span className={`${styles.bar} ${open ? styles.barOpenBottom : ""}`} />
+          </button>
         </div>
-      )}
-    </header>
+
+        {open && (
+          <div className={styles.mobileMenu}>
+            <div className={styles.mobileNav}>
+              {navLinks.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setOpen(false)}
+                  className={styles.mobileLink}
+                >
+                  {link.label}
+                </a>
+              ))}
+
+            </div>
+          </div>
+        )}
+      </header>
+    </div>
   );
 }

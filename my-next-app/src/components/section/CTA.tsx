@@ -1,21 +1,47 @@
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
+import Reveal from "@/components/ui/Reveal";
+import styles from "./CTA.module.css";
 
 export default function CTA() {
   return (
-    <section className="relative overflow-hidden bg-villa py-24">
-      <div className="absolute inset-0 bg-blueprint bg-grid opacity-20" />
-      <Container className="relative flex flex-col items-center gap-6 text-center">
-        <h2 className="max-w-2xl font-display text-3xl leading-tight text-parchment md:text-5xl">
-          Have a plot, a villa, or a space in mind?
-        </h2>
-        <p className="max-w-md text-sm text-parchment/70 md:text-base">
-          Tell us the scope — interiors, fit-out or landscaping — and we&apos;ll
-          come back with a plan and a number.
-        </p>
-        <Button href="#contact" variant="primary" className="mt-2">
-          Start a Conversation
-        </Button>
+    <section className={styles.section}>
+      <div className={styles.gridBackdrop} />
+      <Container className={styles.container}>
+        <Reveal>
+          <div className={styles.eyebrow}>READY TO START YOUR PROJECT?</div>
+          <h2 className={styles.title}>
+            LET&apos;S TURN YOUR IDEA INTO REALITY.
+          </h2>
+        </Reveal>
+        
+        <Reveal delay={200}>
+          <div className={styles.description}>
+            <p>
+              Whether you are planning an interior transformation, fit-out project, maintenance work, landscaping project or technical service requirement, Al Ejaba Al Sareea is ready to help.
+            </p>
+            <p>
+              We bring together design, technical expertise and skilled workmanship to deliver solutions built around your requirements.
+            </p>
+          </div>
+        </Reveal>
+
+        <Reveal delay={400}>
+          <div className={styles.actions}>
+            <Button href="#contact" variant="primary">
+              GET IN TOUCH
+            </Button>
+            <Button href="#services" variant="outline">
+              EXPLORE OUR SERVICES
+            </Button>
+          </div>
+        </Reveal>
+
+        <Reveal delay={600}>
+          <div className={styles.shortCta}>
+            Have a project in mind? Let&apos;s discuss it.
+          </div>
+        </Reveal>
       </Container>
     </section>
   );

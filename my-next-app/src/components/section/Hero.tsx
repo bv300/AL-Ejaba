@@ -1,75 +1,77 @@
 import Button from "@/components/ui/Button";
-import Container from "@/components/ui/Container";
+import Reveal from "@/components/ui/Reveal";
+import styles from "./Hero.module.css";
 
 export default function Hero() {
   return (
-    <section
-      id="home"
-      className="relative flex min-h-screen items-center overflow-hidden bg-ink pt-20"
-    >
-      {/* blueprint grid backdrop */}
-      <div className="absolute inset-0 bg-blueprint bg-grid opacity-70" />
-      <div className="absolute inset-0 bg-gradient-to-b from-ink/20 via-ink/60 to-ink" />
+    <section id="home" className={styles.section}>
+      {/* Background elements */}
+      <div className={styles.gridBackdrop} />
+      <div className={styles.gradientBackdrop} />
 
-      {/* corner coordinate marks, referencing architectural drawings */}
-      <span className="absolute left-6 top-24 font-mono text-[10px] tracking-[0.3em] text-brass/60 md:left-10">
-        25.2582° N
-      </span>
-      <span className="absolute right-6 top-24 font-mono text-[10px] tracking-[0.3em] text-brass/60 md:right-10">
-        55.3047° E
-      </span>
+      <div className={styles.heroContent}>
+        <div className={styles.heroGrid}>
+          {/* Text Content */}
+          <div className={styles.textContent}>
+            <Reveal delay={200}>
+              <div className={styles.eyebrow}>
+                <span className={styles.eyebrowLine} />
+                AL EJABA AL SAREEA
+              </div>
+            </Reveal>
 
-      <Container className="relative">
-        <div className="max-w-3xl">
-          <div className="mb-6 flex items-center gap-3 font-mono text-xs tracking-[0.25em] text-brass uppercase">
-            <span className="h-px w-8 bg-brass" />
-            Dubai — Interior Design &amp; Technical Services
+            <Reveal delay={400}>
+              <h1 className={styles.title}>
+                TECHNICAL SERVICES L.L.C.
+              </h1>
+            </Reveal>
+
+            <Reveal delay={600}>
+              <h2 className={styles.subheading}>
+                GENERAL MAINTENANCE &bull; INTERIOR DESIGN &bull; DECORATION &bull; TURNKEY FIT-OUT
+              </h2>
+            </Reveal>
+
+            <Reveal delay={800}>
+              <div className={styles.description}>
+                <p>
+                  Professional technical and interior solutions designed around your needs.
+                </p>
+                <p>
+                  We provide quality-focused maintenance, interior design, decoration, technical and turnkey fit-out solutions for residential and commercial spaces.
+                </p>
+              </div>
+            </Reveal>
+
+            <Reveal delay={1000}>
+              <div className={styles.actions}>
+                <Button href="#services" variant="primary">
+                  EXPLORE SERVICES
+                </Button>
+                <Button href="#contact" variant="outline">
+                  CONTACT US
+                </Button>
+              </div>
+            </Reveal>
+
+            <Reveal delay={1200}>
+              <div className={styles.smallText}>
+                Design &bull; Build &bull; Maintain
+              </div>
+            </Reveal>
           </div>
 
-          <h1 className="font-display text-5xl leading-[1.02] tracking-tight text-parchment md:text-7xl">
-            We draft the villa
-            <br />
-            before we build it.
-          </h1>
-
-          <p className="mt-8 max-w-xl text-base leading-relaxed text-parchment/70 md:text-lg">
-            Al Ejaba Al Sareea Technical Services gives shape to our clients&apos;
-            creativity — interior design, fit-out, landscaping and facility
-            management, delivered by the same team from first sketch to
-            handover.
-          </p>
-
-          <div className="mt-10 flex flex-wrap items-center gap-4">
-            <Button href="#projects" variant="primary">
-              View Projects
-            </Button>
-            <Button href="#contact" variant="outline">
-              Speak to Us
-            </Button>
-          </div>
+          {/* Right: Accordion Gallery */}
+          <Reveal delay={600}>
+            <div className={styles.wrapper}>
+              <div style={{ backgroundImage: "url(/images/hero-image1.png)" }}></div>
+              <div style={{ backgroundImage: "url(/images/hero-image2.png)" }}></div>
+              <div style={{ backgroundImage: "url(/images/hero-image3.png)" }}></div>
+              <div style={{ backgroundImage: "url(/images/hero-image4.png)" }}></div>
+            </div>
+          </Reveal>
         </div>
-
-        <div className="mt-20 grid max-w-2xl grid-cols-3 gap-8 border-t border-brass/20 pt-8">
-          <div>
-            <div className="font-display text-3xl text-parchment">30+</div>
-            <div className="mt-1 font-mono text-[10px] uppercase tracking-[0.2em] text-parchment/50">
-              Villas Delivered
-            </div>
-          </div>
-          <div>
-            <div className="font-display text-3xl text-parchment">4</div>
-            <div className="mt-1 font-mono text-[10px] uppercase tracking-[0.2em] text-parchment/50">
-              Core Services
-            </div>
-          </div>
-          <div>
-            <div className="font-display text-3xl text-parchment">UAE</div>
-            <div className="mt-1 font-mono text-[10px] uppercase tracking-[0.2em] text-parchment/50">
-              Wide Coverage
-            </div>
-          </div>
-        </div>
-      </Container>
+      </div>
     </section>
   );
 }

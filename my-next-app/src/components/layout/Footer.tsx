@@ -1,54 +1,45 @@
 import { navLinks, site } from "@/data/site";
 import Container from "@/components/ui/Container";
+import styles from "./Footer.module.css";
 
 export default function Footer() {
   return (
-    <footer className="bg-ink border-t border-brass/20 py-16 text-parchment">
+    <footer className={styles.footer}>
       <Container>
-        <div className="grid gap-10 md:grid-cols-3">
-          <div>
-            <div className="font-display text-xl">{site.shortName}</div>
-            <p className="mt-3 max-w-xs text-sm text-parchment/60">
-              {site.legalName}
+        <div className={styles.grid}>
+          {/* Brand */}
+          <div className={styles.brandSection}>
+            <div className={styles.logoContainer}>
+              <img src="/images/alejaba_logo_200x200.png" alt="Al Ejaba Logo" className={styles.logoImg} />
+              <div className={styles.logoText}>
+                <div className={styles.brandTitle}>AL EJABA AL SAREEA</div>
+                <p className={styles.legalName}>TECHNICAL SERVICES L.L.C.</p>
+              </div>
+            </div>
+            <p className={styles.tagline}>
+              General Maintenance | Interior Design | Decoration | Turnkey Fit-Out Solutions
             </p>
           </div>
 
+          {/* Quick Links */}
           <div>
-            <div className="font-mono text-xs uppercase tracking-[0.25em] text-brass">
-              Navigate
-            </div>
-            <ul className="mt-4 space-y-2">
+            <div className={styles.heading}>QUICK LINKS</div>
+            <ul className={styles.list}>
               {navLinks.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-parchment/70 hover:text-brass"
-                  >
+                <li key={link.href} className={styles.listItem}>
+                  <a href={link.href} className={styles.link}>
                     {link.label}
                   </a>
                 </li>
               ))}
             </ul>
           </div>
-
-          <div>
-            <div className="font-mono text-xs uppercase tracking-[0.25em] text-brass">
-              Contact
-            </div>
-            <ul className="mt-4 space-y-2 text-sm text-parchment/70">
-              <li>{site.phone1}</li>
-              <li>{site.phone2}</li>
-              <li>{site.email}</li>
-              <li>{site.address}</li>
-            </ul>
-          </div>
         </div>
 
-        <div className="mt-14 flex flex-col gap-2 border-t border-parchment/10 pt-6 font-mono text-[11px] text-parchment/40 md:flex-row md:items-center md:justify-between">
+        <div className={styles.bottomBar}>
           <span>
-            © {new Date().getFullYear()} {site.legalName}. All rights reserved.
+            © 2026 Al Ejaba Al Sareea Technical Services L.L.C. All Rights Reserved.
           </span>
-          <span>Dubai, U.A.E</span>
         </div>
       </Container>
     </footer>

@@ -1,34 +1,66 @@
 import Container from "@/components/ui/Container";
 import SectionTitle from "@/components/ui/SectionTitle";
+import Reveal from "@/components/ui/Reveal";
+import styles from "./About.module.css";
 
 export default function About() {
   return (
-    <section id="about" className="bg-parchment py-28">
+    <section id="about" className={styles.section}>
       <Container>
-        <div className="grid gap-16 md:grid-cols-[1fr_1.2fr]">
-          <SectionTitle eyebrow="Who We Are" title="Design led. Site built." />
+        <div className={styles.grid}>
+          {/* Left Column: Overlapping Image and Title */}
+          <div className={styles.leftCol}>
+            <Reveal>
+              <div className={styles.imageGridContainer}>
+                <div className={styles.gridItem1}>
+                  <SectionTitle eyebrow="ABOUT US" title="WHO WE ARE" />
+                </div>
+                <div className={styles.gridItem2}>
+                  <div className={styles.imageWrapper} />
+                </div>
+              </div>
+            </Reveal>
+          </div>
 
-          <div className="space-y-6 text-ink/75">
-            <p className="text-lg leading-relaxed">
-              Al Ejaba Al Sareea Technical Services (AAJLTES) is a Dubai-based
-              interior design consultancy with a large portfolio of successful
-              projects across the middle east. Our experience and passion for
-              creativity gives us the skills to meet and exceed our clients&apos;
-              expectations.
-            </p>
-            <p className="leading-relaxed">
-              We give shape to our clients&apos; creativity and imagination through
-              design and technical consultation — our skilled workmen create
-              that ambiance for our clients. Our success relies on the best
-              customer relations, innovative solutions, and an ambiance you
-              love, in an affordable budget.
-            </p>
-            <p className="leading-relaxed">
-              Beyond delivery, AAJLTES keeps a separate maintenance team that
-              looks after every completed project — plumbing, electrical,
-              mechanical and general facility management — for timely,
-              long-term support.
-            </p>
+          {/* Right Column: Content */}
+          <div className={styles.rightCol}>
+            <Reveal delay={200}>
+              <div className={styles.content}>
+                <p className={styles.statement}>
+                  Building Better Spaces Through Experience & Expertise
+                </p>
+                
+                <p className={styles.paragraph}>
+                  Al Ejaba Al Sareea Technical Services L.L.C. is a professional technical services and interior design company with a portfolio of successful projects in the Middle East. Our experience and passion for creativity give us the skills to meet and exceed our clients&apos; expectations.
+                </p>
+
+                <p className={styles.paragraph}>
+                  We bring our clients&apos; imagination to life through design, technical consultation and skilled workmanship. Our approach is built around strong relationships, innovative solutions and quality work delivered with attention to budget requirements.
+                </p>
+              </div>
+            </Reveal>
+
+            {/* Highlights Grid */}
+            <Reveal delay={400}>
+              <div className={styles.featuresGrid}>
+                <div>
+                  <div className={styles.featureNum}>EXPERIENCE</div>
+                  <p className={styles.featureDesc}>A portfolio of successful projects across different property and project types.</p>
+                </div>
+                <div>
+                  <div className={styles.featureNum}>CREATIVITY</div>
+                  <p className={styles.featureDesc}>Transforming client ideas and imagination into practical spaces.</p>
+                </div>
+                <div>
+                  <div className={styles.featureNum}>SKILLED TEAM</div>
+                  <p className={styles.featureDesc}>Experienced teams for technical, interior and maintenance requirements.</p>
+                </div>
+                <div>
+                  <div className={styles.featureNum}>RELIABLE SUPPORT</div>
+                  <p className={styles.featureDesc}>Dedicated maintenance and facility-management support after project completion.</p>
+                </div>
+              </div>
+            </Reveal>
           </div>
         </div>
       </Container>

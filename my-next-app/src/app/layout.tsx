@@ -2,6 +2,9 @@ import type { Metadata } from "next";
 import { Fraunces, Manrope, IBM_Plex_Mono } from "next/font/google";
 import "./globals.css";
 import { site } from "@/data/site";
+import Loader from "@/components/ui/Loader";
+import FloatingContact from "@/components/ui/FloatingContact";
+import ScrollToTop from "@/components/ui/ScrollToTop";
 
 const fraunces = Fraunces({
   subsets: ["latin"],
@@ -43,7 +46,10 @@ export default function RootLayout({
       <body
         className={`${fraunces.variable} ${manrope.variable} ${plexMono.variable} font-body antialiased`}
       >
+        <Loader />
         {children}
+        <FloatingContact />
+        <ScrollToTop />
       </body>
     </html>
   );

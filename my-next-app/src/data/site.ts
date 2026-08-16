@@ -3,23 +3,26 @@ import { NavLink, Project } from "@/types";
 export const site = {
   name: "AL EJABA AL SAREEA",
   legalName: "Al Ejaba Al Sareea Technical Services L.L.C",
-  shortName: "AAJLTES",
+  shortName: "Al Ejaba Tech",
   tagline: "Interior design & fit-out consultants",
   description:
     "Interior design consultants and technical services contractor based in Dubai, with a large portfolio of villas, landscapes and commercial fit-outs across the UAE.",
   phone1: "+971 55 955 2180",
   phone2: "+971 58 996 2180",
-  email: "info@aajlaebjaba.ae",
+  email: "info@ejaba.ae",
+  altEmail: "alejabatech@gmail.com",
   contact: "Bushra Obaid Mohammad",
   address: "Naif, Deira - Dubai - U.A.E",
-  url: "https://www.aajlaebjaba.ae",
+  whatsapp: "971559552180", // Used for wa.me links
+  instagram: "https://instagram.com", // Replace with actual Instagram URL
+  mapsLink: "https://maps.google.com/?q=Naif, Deira - Dubai - U.A.E",
+  url: "https://www.ejaba.ae",
 };
 
 export const navLinks: NavLink[] = [
-  { label: "About", href: "#about" },
+  { label: "Home", href: "#home" },
+  { label: "About Us", href: "#about" },
   { label: "Services", href: "#services" },
-  { label: "Why Us", href: "#why-us" },
-  { label: "Projects", href: "#projects" },
   { label: "Contact", href: "#contact" },
 ];
 
@@ -37,23 +40,4 @@ export const projects: Project[] = [
   { name: "Dubai Realestate Center", location: "DREC", value: "1,530,000", scope: "Interior Fit-out Refurbishment" },
   { name: "Dubai Realestate Center", location: "DREC", value: "1,300,000", scope: "Landscape, Pool & Play Area" },
   { name: "Villa in Al Khawaneej", location: "Al Khawaneej", value: "628,000", scope: "Landscaping Works" },
-];
-
-export const featuredVillas = [
-  "Ahmed Lootah Villa",
-  "Mona Khawaneej Villa",
-  "Saeed Khawaneej Villa",
-  "Salem Al Zaabi Villa",
-  "Salem Kathiri Villa — Arabian Ranches II",
-  "H.H. Sheikh Ghada Villa — Sharjah",
-  "Hammad Ketbi Villa — Margham",
-  "Diwan Al Ameeri — Govt. of U.A.Q.",
-  "Etisalat Academy — Muhaisnah",
-  "Al Waleed Real Estate Tower — DHCC",
-  "Coco Villa — Hattan III",
-  "Mickey — Mirador, Arabian Ranches I",
-  "Henrik Villa — Al Mahra",
-  "Trinity Villa — Saheel",
-  "Lamees Amba Villa — Victory Heights",
-  "Dr. Anand — L51, Emirates Hills",
 ];

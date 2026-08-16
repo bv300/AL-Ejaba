@@ -17,3 +17,10 @@ export interface NavLink {
   label: string;
   href: string;
 }
+
+export interface CarouselSlide {
+  id: string;
+  title: string;
+  description: string;
+  image: string;
+}

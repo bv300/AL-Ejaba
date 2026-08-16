@@ -1,4 +1,4 @@
-import { cn } from "@/lib/utils";
+import styles from "./Button.module.css";
 
 type ButtonProps = {
   children: React.ReactNode;
@@ -15,16 +15,15 @@ export default function Button({
   className,
   onClick,
 }: ButtonProps) {
-  const base =
-    "inline-flex items-center gap-2 px-6 py-3 font-mono text-xs uppercase tracking-[0.2em] transition-colors duration-200";
+  const base = styles.base;
 
   const variants: Record<string, string> = {
-    primary: "bg-brass text-ink hover:bg-brass-light",
-    outline: "border border-brass/50 text-parchment hover:border-brass hover:bg-brass/10",
-    ghost: "text-ink hover:text-brass",
+    primary: styles.primary,
+    outline: styles.outline,
+    ghost: styles.ghost,
   };
 
-  const classes = cn(base, variants[variant], className);
+  const classes = [base, variants[variant], className].filter(Boolean).join(" ");
 
   if (href) {
     return (
