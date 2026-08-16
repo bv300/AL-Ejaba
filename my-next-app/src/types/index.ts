@@ -4,6 +4,7 @@ export interface Service {
   title: string;
   description: string;
   points: string[];
+  image?: string;
 }
 
 export interface Project {

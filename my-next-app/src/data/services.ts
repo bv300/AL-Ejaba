@@ -7,6 +7,7 @@ export const services: Service[] = [
     title: "GENERAL MAINTENANCE",
     description: "Reliable maintenance solutions to help keep properties functional, safe and well maintained.",
     points: ["Villas", "Buildings", "Warehouses", "Commercial properties", "Other facility requirements"],
+    image: "/images/general-maintenance-services.png",
   },
   {
     id: "interior-design",

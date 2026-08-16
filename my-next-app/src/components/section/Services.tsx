@@ -26,6 +26,11 @@ export default function Services() {
           {services.map((service, i) => (
             <Reveal key={service.id} delay={(i % 3) * 100}>
               <div className={styles.serviceCard}>
+                {service.image && (
+                  <div className={styles.cardImageWrapper}>
+                    <img src={service.image} alt={service.title} className={styles.cardImage} />
+                  </div>
+                )}
                 <div className={styles.cardHeader}>
                   <h3 className={styles.title}>{service.title}</h3>
                 </div>
