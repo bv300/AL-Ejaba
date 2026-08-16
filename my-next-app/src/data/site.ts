@@ -7,15 +7,13 @@ export const site = {
   tagline: "Interior design & fit-out consultants",
   description:
     "Interior design consultants and technical services contractor based in Dubai, with a large portfolio of villas, landscapes and commercial fit-outs across the UAE.",
-  phone1: "+971 55 955 2180",
   phone2: "+971 58 996 2180",
   email: "info@ejaba.ae",
-  altEmail: "alejabatech@gmail.com",
   contact: "Bushra Obaid Mohammad",
-  address: "Naif, Deira - Dubai - U.A.E",
-  whatsapp: "971559552180", // Used for wa.me links
+  address: "Growbox Group, 1st Floor, Hamsah Complex Block O, Office 112-118, Khalid Bin Al Waleed, Al Karama",
+  whatsapp: "971589962180", // Used for wa.me links
   instagram: "https://instagram.com", // Replace with actual Instagram URL
-  mapsLink: "https://maps.google.com/?q=Naif, Deira - Dubai - U.A.E",
+  mapsLink: "https://maps.app.goo.gl/d9FAyzThNKAuyxJm9?g_st=ac",
   url: "https://www.ejaba.ae",
 };
 

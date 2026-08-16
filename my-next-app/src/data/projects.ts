@@ -17,24 +17,24 @@ export const carouselSlides: CarouselSlide[] = [
     id: "commercial",
     title: "COMMERCIAL SPACES",
     description: "Professional solutions for offices, retail outlets, supermarkets and commercial environments.",
-    image: "", // Placeholder
+    image: "/images/our-project3.jpg", // Placeholder
   },
   {
     id: "restaurants",
     title: "RESTAURANTS & CAFETERIAS",
     description: "Interior fit-out and kitchen-related works for food-service environments.",
-    image: "", // Placeholder
+    image: "/images/our-project4.jpg", // Placeholder
   },
   {
     id: "landscaping",
     title: "LANDSCAPING & OUTDOOR",
     description: "Landscaping, swimming pool areas, play areas, parking and outdoor improvement works.",
-    image: "", // Placeholder
+    image: "/images/our-project5.jpg", // Placeholder
   },
   {
     id: "maintenance",
     title: "MAINTENANCE & TECHNICAL WORKS",
     description: "Maintenance and technical solutions supporting residential, commercial and other property requirements.",
-    image: "", // Placeholder
+    image: "/images/our-project6.jpg", // Placeholder
   },
 ];

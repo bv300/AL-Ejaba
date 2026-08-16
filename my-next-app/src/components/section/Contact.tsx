@@ -38,8 +38,7 @@ export default function Contact() {
                   <div className={styles.cardLabel}>FIND US</div>
                   <div className={styles.cardValue}>
                     {site.legalName}<br />
-                    Naif, Deira<br />
-                    Dubai, U.A.E.
+                    {site.address}
                   </div>
                 </div>
               </div>
@@ -51,7 +50,6 @@ export default function Contact() {
                 <div>
                   <div className={styles.cardLabel}>CALL US</div>
                   <div className={styles.cardValue}>
-                    <a href={`tel:${site.phone1}`}>{site.phone1}</a><br />
                     <a href={`tel:${site.phone2}`}>{site.phone2}</a>
                   </div>
                 </div>
@@ -64,8 +62,7 @@ export default function Contact() {
                 <div>
                   <div className={styles.cardLabel}>EMAIL</div>
                   <div className={styles.cardValue}>
-                    <a href={`mailto:${site.email}`}>{site.email}</a><br />
-                    <a href={`mailto:${site.altEmail}`}>{site.altEmail}</a>
+                    <a href={`mailto:${site.email}`}>{site.email}</a>
                   </div>
                 </div>
               </div>
@@ -77,8 +74,7 @@ export default function Contact() {
                 <div>
                   <div className={styles.cardLabel}>OFFICE LOCATION</div>
                   <div className={styles.cardValue}>
-                    Naif, Deira<br />
-                    Dubai, U.A.E.
+                    {site.address}
                   </div>
                 </div>
               </div>
@@ -90,7 +86,7 @@ export default function Contact() {
             <div className={styles.mapHeader}>
               <div>
                 <h3 className={styles.mapTitle}>VISIT OUR OFFICE</h3>
-                <p className={styles.mapDesc}>Find {site.legalName} in Naif, Deira, Dubai.</p>
+                <p className={styles.mapDesc}>Find {site.legalName} at our Karama office.</p>
               </div>
               <a href={site.mapsLink} target="_blank" rel="noopener noreferrer" className={styles.mapLink}>
                 OPEN IN MAPS &rarr;
@@ -98,7 +94,7 @@ export default function Contact() {
             </div>
             <div className={styles.mapWrapper}>
               <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d14436.438258385758!2d55.30232255!3d25.26691455!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f433f48a1768b%3A0xc301f2f811df6b5c!2sNaif%20-%20Dubai!5e0!3m2!1sen!2sae!4v1700000000000!5m2!1sen!2sae" 
+                src="https://maps.google.com/maps?q=Growbox+Group,+Hamsah+Complex,+Al+Karama,+Dubai&t=&z=13&ie=UTF8&iwloc=&output=embed" 
                 width="100%" 
                 height="100%" 
                 style={{ border: 0 }} 
