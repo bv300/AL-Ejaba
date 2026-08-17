@@ -29,22 +29,28 @@ export default function Services() {
                 {service.image && (
                   <div className={styles.cardImageWrapper}>
                     <img src={service.image} alt={service.title} className={styles.cardImage} />
+                    <div className={styles.imageOverlay}></div>
                   </div>
                 )}
                 <div className={styles.cardHeader}>
                   <h3 className={styles.title}>{service.title}</h3>
                 </div>
-                <div className={styles.cardBody}>
-                  <p className={styles.desc}>{service.description}</p>
-                  {service.points && service.points.length > 0 && (
-                    <ul className={styles.pointsList}>
-                      {service.points.map((point) => (
-                        <li key={point} className={styles.point}>
-                          {point}
-                        </li>
-                      ))}
-                    </ul>
-                  )}
+                <div className={styles.cardReveal}>
+                  <div className={styles.cardHeaderReveal}>
+                    <h3 className={styles.titleReveal}>{service.title}</h3>
+                  </div>
+                  <div className={styles.cardBody}>
+                    <p className={styles.desc}>{service.description}</p>
+                    {service.points && service.points.length > 0 && (
+                      <ul className={styles.pointsList}>
+                        {service.points.map((point) => (
+                          <li key={point} className={styles.point}>
+                            {point}
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </div>
                 </div>
               </div>
             </Reveal>

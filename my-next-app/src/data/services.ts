@@ -7,7 +7,7 @@ export const services: Service[] = [
     title: "GENERAL MAINTENANCE",
     description: "Reliable maintenance solutions to help keep properties functional, safe and well maintained.",
     points: ["Villas", "Buildings", "Warehouses", "Commercial properties", "Other facility requirements"],
-    image: "/images/general-maintenance-services.png",
+    image: "/images/SERVICES-GENERAL MAINTENANCE.jpg",
   },
   {
     id: "interior-design",
@@ -15,6 +15,7 @@ export const services: Service[] = [
     title: "INTERIOR DESIGN",
     description: "Creative interior solutions that combine functionality, aesthetics and client requirements. We work to transform ideas and imagination into practical and attractive interior environments through design and technical consultation.",
     points: [],
+    image: "/images/SERVICES-INTERIOR-DESIGN.jpg",
   },
   {
     id: "decoration-works",
@@ -22,6 +23,7 @@ export const services: Service[] = [
     title: "DECORATION WORKS",
     description: "We create attractive environments through carefully planned decoration and interior improvement works. Our focus is to create an ambiance that reflects the client's requirements and vision.",
     points: [],
+    image: "/images/DECORATION WORKS-SERVICES-.jpg",
   },
   {
     id: "turnkey-fitout",
@@ -29,6 +31,7 @@ export const services: Service[] = [
     title: "TURNKEY FIT-OUT",
     description: "Complete fit-out and refurbishment solutions for different types of spaces.",
     points: ["Villas", "Offices", "Restaurants", "Cafeterias", "Supermarkets", "Retail outlets", "Commercial spaces"],
+    image: "/images/TURNKEY FIT-OUT-SERVICES.jpg",
   },
   {
     id: "mep-works",
@@ -36,6 +39,7 @@ export const services: Service[] = [
     title: "MEP WORKS",
     description: "Professional technical works.",
     points: ["Mechanical: Mechanical-related technical works", "Electrical: Electrical installation and maintenance requirements", "Plumbing: Plumbing works for residential and commercial requirements"],
+    image: "/images/MEP-WORKS-SERVICES.jpg",
   },
   {
     id: "ac-installation",
@@ -43,6 +47,7 @@ export const services: Service[] = [
     title: "A/C INSTALLATION & MAINTENANCE",
     description: "Air-conditioning installation and maintenance solutions for residential and commercial requirements.",
     points: [],
+    image: "/images/AC INSTALLATION & MAINTENANCE-SERVICES.jpg",
   },
   {
     id: "landscaping",
@@ -50,6 +55,7 @@ export const services: Service[] = [
     title: "LANDSCAPING & OUTDOOR WORKS",
     description: "Outdoor solutions designed to improve the functionality and appearance of external spaces.",
     points: ["Landscaping", "Swimming pool areas", "Play areas", "Parking areas", "Interlock works", "Ground levelling", "Fencing works"],
+    image: "/images/LANDSCAPING & OUTDOOR WORKS-SERVICES.jpg",
   },
   {
     id: "retail-commercial",
@@ -57,6 +63,7 @@ export const services: Service[] = [
     title: "RETAIL & COMMERCIAL WORKS",
     description: "Technical and fit-out solutions for commercial environments.",
     points: ["Retail outlets", "Supermarkets", "Offices", "Hospitality", "Restaurants", "Cafeterias"],
+    image: "/images/RETAIL & COMMERCIAL WORKS-SERVICES.png",
   },
   {
     id: "furniture-carpentry",
@@ -64,6 +71,7 @@ export const services: Service[] = [
     title: "FURNITURE & CARPENTRY",
     description: "Practical furniture and carpentry solutions for interior and commercial projects.",
     points: [],
+    image: "/images/FURNITURE & CARPENTRY-SERVICES.jpg",
   },
   {
     id: "mezzanine-floor",
@@ -71,5 +79,6 @@ export const services: Service[] = [
     title: "MEZZANINE FLOOR WORKS",
     description: "Practical mezzanine floor solutions for projects requiring additional usable space.",
     points: [],
+    image: "/images/MEZZANINE FLOOR WORKS-SERVICES.jpg",
   },
 ];

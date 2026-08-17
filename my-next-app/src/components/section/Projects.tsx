@@ -12,6 +12,7 @@ export default function Projects() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isHovered, setIsHovered] = useState(false);
   const [cardsToShow, setCardsToShow] = useState(3);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   // Responsive cards setup
   useEffect(() => {
@@ -99,7 +100,7 @@ export default function Projects() {
                         <h3 className={styles.slideTitle}>{slide.title}</h3>
                         <p className={styles.slideDesc}>{slide.description}</p>
                         <div className={styles.slideAction}>
-                          <Button href="#contact" variant="primary">
+                          <Button onClick={() => slide.image && setSelectedImage(slide.image)} variant="primary">
                             VIEW PROJECT
                           </Button>
                         </div>
@@ -141,6 +142,18 @@ export default function Projects() {
           </div>
         </Reveal>
       </Container>
+
+      {/* Lightbox Modal */}
+      {selectedImage && (
+        <div className={styles.modalOverlay} onClick={() => setSelectedImage(null)}>
+          <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
+            <button className={styles.closeButton} onClick={() => setSelectedImage(null)} aria-label="Close image">
+              &times;
+            </button>
+            <img src={selectedImage} alt="Project view" className={styles.modalImage} />
+          </div>
+        </div>
+      )}
     </section>
   );
 }
