@@ -190,7 +190,7 @@
   grid-template-columns: var(--grid-cols);
   width: 100%;
   aspect-ratio: 4/3;
-  transition: grid-template-columns 300ms ease-in-out;
+  transition: grid-template-columns 300ms cubic-bezier(0.4, 0, 0.2, 1);
   margin-top: 2.5rem;
 }
 
@@ -209,21 +209,58 @@
 .wrapper > div {
   position: relative;
   overflow: hidden;
-  border-radius: 0 0 0 30% / 0 0 0 50%;
-  transition: all 300ms ease-in-out;
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
   border: var(--border-size) solid var(--border-color);
   background-size: cover;
   background-position: center;
   grid-row: 1;
+  /* Notched corner at bottom-left */
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 100%,
+    30px 100%,
+    0 calc(100% - 30px)
+  );
 }
 
 .wrapper > div:first-child {
-  border-radius: 0 0 0 0 / 0 0 0 200px;
+  /* Larger notch for first child */
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 100%,
+    60px 100%,
+    0 calc(100% - 60px)
+  );
 }
 
 .wrapper > div:hover,
 .wrapper > div:hover + div {
-  border-radius: 0 0 0 0;
+  /* Remove notch */
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% 100%,
+    0 100%,
+    0 100%
+  );
+}
+
+
+/* To ensure text visibility against backgrounds, add a slight dark gradient on hover */
+.wrapper > div::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 40%);
+  opacity: 0;
+  transition: opacity 300ms ease;
+  pointer-events: none;
+}
+
+.wrapper > div:hover::after {
+  opacity: 1;
 }
 
 .wrapper > div:nth-child(1) { grid-column: 1 / span 3; }
