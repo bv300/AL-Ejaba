@@ -8,6 +8,7 @@ export const site = {
   description:
     "Interior design consultants and technical services contractor based in Dubai, with a large portfolio of villas, landscapes and commercial fit-outs across the UAE.",
   phone2: "+971 58 996 2180",
+  landline: "+971 4 566 3421",
   email: "info@ejaba.ae",
   contact: "Bushra Obaid Mohammad",
   address: "Growbox Group, 1st Floor, Hamsah Complex Block O, Office 112-118, Khalid Bin Al Waleed, Al Karama",
@@ -18,10 +19,10 @@ export const site = {
 };
 
 export const navLinks: NavLink[] = [
-  { label: "Home", href: "#home" },
-  { label: "About Us", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Contact", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/#about" },
+  { label: "Services", href: "/#services" },
+  { label: "Contact", href: "/contact" },
 ];
 
 // Sourced from the company's project ledger / portfolio

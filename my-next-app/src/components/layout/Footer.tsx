@@ -34,6 +34,16 @@ export default function Footer() {
               ))}
             </ul>
           </div>
+
+          {/* Associate Company */}
+          <div className={styles.associateContainer}>
+            <div className={styles.heading}>OUR ASSOCIATE COMPANY</div>
+            <img
+              src="/images/our-associate-company.png"
+              alt="Our Associate Company"
+              className={styles.associateImg}
+            />
+          </div>
         </div>
 
         <div className={styles.bottomBar}>
